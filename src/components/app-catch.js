@@ -1,3 +1,4 @@
+import { async } from 'regenerator-runtime';
 import axios from 'axios';
 import lodash from 'lodash';
 
@@ -41,10 +42,10 @@ class AppCatch extends HTMLElement {
       let btnClose = this.shadow.querySelector('#btnClose');
       btnClose.addEventListener('click', hideModal);
 
-      const getPokemon = async () => {
+      const getPokemon = async (count) => {
         try {
           const res = await axios.get(
-            `https://pokeapi.co/api/v2/pokemon/${this.count}`
+            `https://pokeapi.co/api/v2/pokemon/${count}`
           );
           console.log(res.data);
           const pokemon = res.data;
@@ -52,14 +53,13 @@ class AppCatch extends HTMLElement {
           this._pokemonName = pokemon.name;
           this._pokemonImg = pokemon.sprites.front_default;
           this._pokemonType = pokemon.types[0].type.name;
-          console.log('Type', this._pokemonType);
           this._pokemonHeight = pokemon.height;
           this._pokemonWeight = pokemon.weight;
         } catch (error) {
           console.log(error);
         }
       };
-      getPokemon();
+      getPokemon(this.count);
     }
   }
 
@@ -71,6 +71,25 @@ class AppCatch extends HTMLElement {
     this.render();
     let btnCatch = this.shadow.querySelector('#btnCatch');
     btnCatch.addEventListener('click', this.random.bind(this));
+
+    const getPokemon = async (count) => {
+      try {
+        const res = await axios.get(
+          `https://pokeapi.co/api/v2/pokemon/${count}`
+        );
+        console.log(res.data);
+        const pokemon = res.data;
+        this._pokemonId = pokemon.id;
+        this._pokemonName = pokemon.name;
+        this._pokemonImg = pokemon.sprites.front_default;
+        this._pokemonType = pokemon.types[0].type.name;
+        this._pokemonHeight = pokemon.height;
+        this._pokemonWeight = pokemon.weight;
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getPokemon(this.count);
   }
 
   render() {
