@@ -13,10 +13,10 @@ class PokeLogs extends HTMLElement {
     // this._pokemonHeight = this._pokemon.height;
     // this._pokemonWeight = this._pokemon.weight;
     this._pokemonType = this._pokemon.types[0].type.name;
+    setTimeout(() => {
+      this.render();
+    }, 6000);
     this.render();
-    // setTimeout(() => {
-    //   this.render();
-    // }, 6000);
   }
 
   render() {

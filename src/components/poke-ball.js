@@ -1,3 +1,5 @@
+import './app-catch';
+
 class PokeBall extends HTMLElement {
   constructor() {
     super();
@@ -8,50 +10,10 @@ class PokeBall extends HTMLElement {
     this.render();
   }
 
-  get throw() {
-    return this.getAttribute('throw');
-  }
-
-  set throw(value) {
-    this.setAttribute('throw', value);
-  }
-
-  static get observedAttributes() {
-    console.log('observed data');
-    return ['throw'];
-  }
-
   set pokemon(result) {
-    console.log('show result');
-    this._pokemon = result;
-    this._pokemonName = this._pokemon.name;
-    this._pokemonImg = this._pokemon.sprites.front_default;
-    this._pokemonHeight = this._pokemon.weight;
-    this._pokemonWeight = this._pokemon.height;
     this.render();
-  }
-
-  attributeChangedCallback(prop, oldValue, newValue) {
-    if (prop === 'throw') {
-      this.render();
-      let pokeball = this.shadow.getElementById('pokeball');
-      pokeball.this.increment.bind(this);
-      pokeball.classList.add('catch-animation');
-      console.log('throw');
-    }
-    // if (this.throw === '1') {
-    //   console.log('satu');
-    // } else {
-    //   let pokeball = this.shadow.getElementById('pokeball');
-    //   this._pokeball = pokeball;
-    //   this._pokeball.classList.add('catch-animation');
-    //   console.log('bukan satu');
-    //   this.render();
-    // }
-  }
-
-  increment() {
-    this.throw++;
+    const throwPokeball = this.shadow.querySelector('#pokeball');
+    throwPokeball.classList.add('catch-animation');
   }
 
   render() {

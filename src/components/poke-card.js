@@ -16,11 +16,10 @@ class PokeCard extends HTMLElement {
     this._cardWeight = this._card.weight;
 
     this.render();
-    this._cardPokemon = this.shadow.getElementById('pokemonModal');
-    this._cardPokemon.style.display = 'flex';
-    // setTimeout(() => {
-    //   this.render();
-    // }, 6000);
+    setTimeout(() => {
+      this._cardPokemon = this.shadow.getElementById('pokemonModal');
+      this._cardPokemon.style.display = 'flex';
+    }, 6000);
   }
 
   render() {
@@ -44,7 +43,9 @@ class PokeCard extends HTMLElement {
       overflow: auto;
       background-color: rgb(0,0,0);
       background-color: rgba(0,0,0,0.4);
-    }
+      animation: blowUpModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+      }
+    
 
     .modal-header{
       display: flex;
@@ -68,6 +69,7 @@ class PokeCard extends HTMLElement {
       height: 500px;
       text-align: center;
       box-shadow: 5px 10px 20px 5px rgba(184,255,249,0.2);
+      animation: blowUpModalContent .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
       transition: 0.3s;
     }
 
@@ -125,6 +127,51 @@ class PokeCard extends HTMLElement {
       color: black;
       text-decoration: none;
       cursor: pointer;
+    }
+
+    @keyframes blowUpContent {
+      0% {
+        transform:scale(1);
+        opacity:1;
+      }
+      99.9% {
+        transform:scale(2);
+        opacity:0;
+      }
+      100% {
+        transform:scale(0);
+      }
+    }
+    
+    @keyframes blowUpContentTwo {
+      0% {
+        transform:scale(2);
+        opacity:0;
+      }
+      100% {
+        transform:scale(1);
+        opacity:1;
+      }
+    }
+    
+    @keyframes blowUpModal {
+      0% {
+        transform:scale(0);
+      }
+      100% {
+        transform:scale(1);
+      }
+    }
+    
+    @keyframes blowUpModalTwo {
+      0% {
+        transform:scale(1);
+        opacity:1;
+      }
+      100% {
+        transform:scale(0);
+        opacity:0;
+      }
     }
     </style>
 
