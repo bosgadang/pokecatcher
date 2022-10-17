@@ -1,7 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable linebreak-style */
-/* eslint-disable import/order */
 const path = require('path');
 const config = require('./webpack.config');
 const { merge } = require('webpack-merge');

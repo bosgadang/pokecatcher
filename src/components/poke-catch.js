@@ -1,6 +1,3 @@
-import _ from 'lodash';
-import lodash from 'lodash';
-
 class PokeCatch extends HTMLElement {
   constructor() {
     super();
@@ -50,7 +47,7 @@ class PokeCatch extends HTMLElement {
   
     </style>
       <div class="catch">
-      <button type="submit" class="btn-catch" id="btnCatch">Catch</button>
+      <button type="submit" class="btn-catch" id="btnCatch" onclick="let btnCatch = this;this.disabled = true; setTimeout (() => {(this.disabled = false)}, 7000);">Catch</button>
       </div>
     `;
     this.shadow

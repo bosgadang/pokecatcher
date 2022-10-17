@@ -1,5 +1,3 @@
-import moment from 'moment';
-import lodash from 'lodash';
 class PokeCard extends HTMLElement {
   constructor() {
     super();

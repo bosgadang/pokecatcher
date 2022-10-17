@@ -9,7 +9,7 @@ class AppFooter extends HTMLElement {
       <nav class="navbar bg-light">
           <div class="container-fluid navbar-brand fw-bold">
 
-              <span class="d-flex m-auto">Copyright Bosgadang 2022</span>
+              <span class="d-flex m-auto">&#169; Copyright Bosgadang 2022</span>
           </div>
       </nav>`;
   }

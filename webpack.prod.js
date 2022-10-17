@@ -1,7 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable linebreak-style */
-/* eslint-disable import/order */
 const path = require('path');
 const config = require('./webpack.config');
 const { merge } = require('webpack-merge');
@@ -12,7 +8,7 @@ module.exports = merge(config, {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.[contenthash].js',
-    assetModuleFilename: 'img/[hash][ext]',
+    assetModuleFilename: 'img/[name][ext]',
     clean: true,
   },
   plugins: [

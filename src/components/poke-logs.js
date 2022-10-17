@@ -1,5 +1,4 @@
 import moment from 'moment';
-import lodash from 'lodash';
 class PokeLogs extends HTMLElement {
   constructor() {
     super();
@@ -9,14 +8,10 @@ class PokeLogs extends HTMLElement {
   set pokemon(result) {
     this._pokemon = result;
     this._pokemonName = this._pokemon.name;
-    // this._pokemonImg = this._pokemon.sprites.front_default;
-    // this._pokemonHeight = this._pokemon.height;
-    // this._pokemonWeight = this._pokemon.weight;
     this._pokemonType = this._pokemon.types[0].type.name;
     setTimeout(() => {
       this.render();
     }, 6000);
-    this.render();
   }
 
   render() {

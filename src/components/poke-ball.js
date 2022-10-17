@@ -1,5 +1,3 @@
-import './app-catch';
-
 class PokeBall extends HTMLElement {
   constructor() {
     super();
@@ -70,7 +68,7 @@ class PokeBall extends HTMLElement {
       }
     </style>
     <div class="catch">
-      <img src="../img/drawing.svg" alt="pokeball" width="200" class="pokeball" id="pokeball">
+      <img src="../img/pokeball.png" alt="pokeball" width="200" class="pokeball" id="pokeball">
     </div>
     
     `;
