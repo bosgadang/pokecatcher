@@ -33,6 +33,6 @@
     "bootstrap": "^5.2.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
-    "regenerator-runtime": "^0.13.9"
+    "regenerator-runtime": "^0.13.9",
   }
 }
